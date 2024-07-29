@@ -1,0 +1,37 @@
+# Compiled source
+*.dll
+*.exe
+*.so
+*.dylib
+*.pdb
+
+# build output
+build/
+publish/
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (Mono Auto Generated)
+mono_crash.*
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Entity Framework
+*.jfm
+
+# Auto-generated VS Code User-specific files
+.vscode
+
+# VS Code directories
+.vscode/
+
+# Local history for Visual Studio
+.vs/

@@ -1,0 +1,28 @@
+# OS generated files #
+######################
+.DS_Store
+Thumbs.db
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# Node modules #
+###############
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Docker files #
+################
+docker-compose.override.yml
+.env
+
+# VS Code directories #
+.vscode/

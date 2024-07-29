@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Previsão do Tempo</h1>
+  <div class="search-box">
+    <input type="text" [(ngModel)]="city" placeholder="Digite o nome da cidade">
+    <button (click)="searchWeather()">Buscar</button>
+  </div>
+  <div class="current-weather" *ngIf="currentWeather">
+    <h2>{{ currentWeather.city }}</h2>
+    <div class="weather-info">
+      <img [src]="'http://openweathermap.org/img/wn/' + currentWeather.icon + '@2x.png'" alt="{{ currentWeather.description }}">
+      <div class="temp">{{ currentWeather.temperature }}°C</div>
+      <div>{{ currentWeather.description }}</div>
+      <div>Sensação térmica: {{ currentWeather.temperature }}°C</div>
+    </div>
+  </div>
+  <div class="forecast" *ngIf="forecast.length > 0">
+    <h3>Previsão Próximos 5 Dias</h3>
+    <div class="forecast-days">
+      <div class="forecast-day" *ngFor="let day of forecast">
+        <div>{{ day.date | date: 'EEEE, d MMM' }}</div>
+        <img [src]="'http://openweathermap.org/img/wn/' + day.icon + '@2x.png'" alt="{{ day.description }}">
+        <div>{{ day.description }}</div>
+        <div>{{ day.temperature }}°C</div>
+      </div>
+    </div>
+  </div>
+</div>

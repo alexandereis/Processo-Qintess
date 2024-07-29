@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Histórico de Pesquisas</h1>
+  <div class="history" *ngIf="displayedHistory.length > 0">
+    <div class="history-items">
+      <div class="history-item" *ngFor="let history of displayedHistory">
+        <div>{{ history.date | date: 'fullDate' }}</div>
+        <img [src]="'http://openweathermap.org/img/wn/' + history.icon + '@2x.png'" alt="{{ history.description }}">
+        <div>{{ history.city }}</div>
+        <div>{{ history.description }}</div>
+        <div>{{ history.temperature }}°C</div>
+      </div>
+    </div>
+  </div>
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+    <button (click)="nextPage()" [disabled]="currentPage * itemsPerPage >= weatherHistory.length">Próximo</button>
+  </div>
+</div>

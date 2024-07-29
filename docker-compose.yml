@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+  sql-server-db:
+    container_name: sql-server-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+        - "1433:1433"
+    environment:
+        MSSQL_SA_PASSWORD: "SuperPassword@23"
+        ACCEPT_EULA: "Y"
+        MSSQL_PID: "Developer"
+
+
+  weatherforecasterapi:
+    depends_on:
+        - sql-server-db
+    restart: on-failure
+    image: ${DOCKER_REGISTRY-}weatherforecasterapi
+    build:
+      context: .
+      dockerfile: WeatherForecasterAPI/WeatherForecasterAPI/Dockerfile
+    ports:
+        - 5000:8080
+
+  # weatherforecasterfront:
+  #   depends_on:
+  #       - weatherforecasterapi
+  #   build:
+  #     context: .
+  #     dockerfile: weather-forecast-app/weather-forecast-app/Dockerfile
+  #   ports:
+  #     - "4200:80"

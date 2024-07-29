@@ -1,0 +1,25 @@
+nav {
+  margin-bottom: 20px;
+}
+
+  nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ff9800;
+    font-weight: bold;
+  }
+
+    nav a:hover {
+      color: #e68900;
+    }
+
+.container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #e0f7fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
