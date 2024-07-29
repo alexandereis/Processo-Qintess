@@ -171,7 +171,7 @@ services:
     ports:
         - "1433:1433"
     environment:
-        MSSQL_SA_PASSWORD: "SuperPassword@23"
+        MSSQL_SA_PASSWORD: "SuperPassword@23" ->> Edite a senha como voce preferir
         ACCEPT_EULA: "Y"
         MSSQL_PID: "Developer"
 
@@ -190,5 +190,13 @@ services:
 9. Notas Finais
 - Certifique-se de que as portas 1433 (SQL Server), 5000 (API) e 4200 (Frontend) estão disponíveis em sua máquina.
 - Para parar os containers, use docker-compose down.
+
+10. Configurar a Connection String
+    **Antes de executar a aplicação, é necessário configurar a connection string no arquivo appsettings.json do backend. Substitua IP_MAQUINA pelo IP da máquina onde o Docker está sendo executado. A connection string deve ficar no seguinte formato:**
+ ```
+"ConnectionStrings": {
+  "DefaultConnection": "Server=IP_MAQUINA,1433;Database=WeatherForecastDb;User Id=sa;Password=SuperPassword@23;"
+}
+```
 
 Este README foi criado para fornecer todas as informações necessárias para configurar e executar a aplicação de forma fácil e rápida. Esperamos que os avaliadores apreciem a clareza e a completude deste documento.
