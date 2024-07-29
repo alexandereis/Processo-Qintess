@@ -5,7 +5,7 @@
 Este repositório contém a implementação de uma aplicação de previsão do tempo que utiliza C# (.NET) para o backend e Angular para o frontend. A aplicação consulta a previsão do tempo dos próximos 5 dias utilizando a API do OpenWeatherMap e armazena o histórico de consultas em um banco de dados SQL Server.
 
 ## Estrutura do Projeto
-
+```
 Processo Qintess/
 ├── WeatherForecasterAPI/
 │   └── WeatherForecasterAPI/
@@ -18,7 +18,7 @@ Processo Qintess/
 │       ├── package-lock.json
 │       └── src/
 └── docker-compose.yml
-
+```
 
 - `WeatherForecasterAPI`: Contém a API em .NET
 - `weather-forecast-app`: Contém a aplicação Angular
